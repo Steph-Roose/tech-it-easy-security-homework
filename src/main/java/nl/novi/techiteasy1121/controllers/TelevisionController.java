@@ -22,7 +22,8 @@ public class TelevisionController {
     private final TelevisionWallBracketService televisionWallBracketService;
 
     @Autowired
-    public TelevisionController(TelevisionService televisionService, TelevisionWallBracketService televisionWallBracketService){
+    public TelevisionController(TelevisionService televisionService,
+                                TelevisionWallBracketService televisionWallBracketService){
         this.televisionService = televisionService;
         this.televisionWallBracketService = televisionWallBracketService;
     }
