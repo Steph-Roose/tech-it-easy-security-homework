@@ -56,6 +56,21 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/users").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST,"/users/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
+
+                .antMatchers(HttpMethod.POST, "/cimodules").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/cimodules/**").hasRole("ADMIN")
+
+                .antMatchers(HttpMethod.POST, "/remotecontrollers").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/remotecontrollers/**").hasRole("ADMIN")
+
+                .antMatchers(HttpMethod.POST, "/televisions").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/televisions/**").hasRole("ADMIN")
+
+                .antMatchers(HttpMethod.POST, "/wallbrackets").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/wallbrackets/**").hasRole("ADMIN")
+
+                .antMatchers("/cimodules/**", "/remotecontrollers/**", "/televisons/**", "/wallbrackets/**").hasAnyRole("ADMIN", "USER")
+
                 /*voeg de antmatchers toe voor admin(post en delete) en user (overige)*/
                 .antMatchers("/authenticated").authenticated()
                 .antMatchers("/authenticate").permitAll()/*allen dit punt mag toegankelijk zijn voor niet ingelogde gebruikers*/

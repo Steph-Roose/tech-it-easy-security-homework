@@ -94,7 +94,6 @@ public class TelevisionService {
     public void deleteTelevision(@RequestBody Long id) {
 
         televisionRepository.deleteById(id);
-
     }
 
     public TelevisionDto updateTelevision(Long id, TelevisionInputDto inputDto) {
@@ -115,7 +114,6 @@ public class TelevisionService {
             throw new  RecordNotFoundException("geen televisie gevonden");
 
         }
-
     }
 
     public Television transferToTelevision(TelevisionInputDto dto){
